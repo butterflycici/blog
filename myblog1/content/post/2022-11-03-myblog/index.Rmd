@@ -1,0 +1,16 @@
+---
+title: 'COVID-19 in New South Wales'
+author: R package build
+date: '2022-11-03'
+slug: myblog
+categories: []
+tags: []
+---
+
+This visualization shows how the number of infected cases in New South Wales has changed over time since the onset of Covid-19.COVID-19 cases by notification date and postcode, local health district, local government area and likely source of infection.
+
+```{r echo=FALSE}
+df <- read.csv('confirmed_cases_table4_location_likely_source (1).csv')
+df_date<-as.data.frame(table(df$notification_date))
+plot(df_date$Var1,df_date$Freq,xlab = 'date',ylab='number of confirmed cases')
+```
